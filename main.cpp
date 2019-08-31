@@ -7,20 +7,55 @@
 /* 
  * File:   main.cpp
  * Author: JoseG23
- *
+ * 00051716
  * Created on 30 de agosto de 2019, 05:08 PM
  */
 
-#include <cstdlib>
-#include <iostream>
 
+#include <iostream>
+#include <string>
 using namespace std;
 
-/*
- * 
- */
-int main(int argc, char** argv) {
+struct Node{
+    int data;
+    Nodo *next;
+}*begin;
 
-    return 0;
-}
+class Stack{
+public:
+    Node* createNode(int value){
+        Node *n=new Node;
+        n->data=value;
+        n->next= nullptr;
+        return n;
+    }
+    
+    void push(int value){
+        Node *n=crearNodo(value);
+        n->next=begin;
+        begin=n;
+    }
+    
+    void pop(){
+        Nodo *temp=begin;
+        begin=begin->next;
+        free(temp);
+    }
+    
+    void showStack(){
+        Nodo *temp=begin;
+        if(!begin)
+            cout<<"Empty Stack" << endl;
+        else
+            while (temp) {
+                cout<< temp->data << ",";
+                temp=temp->next;
+            }
+    }
+    
+    Stack(){
+        begin=nullptr;
+    }
+};
+
 
