@@ -20,6 +20,23 @@ void swap(int*x, int*y)
     *x=*y;
     *y=z;
 }
+
+int particion(int arr[], int down, int top)
+{
+    int pivot=arr[top];
+    int i=(down-1); 
+    for (int j=down; j<=top-1; j++)
+    {
+        if (arr[j]<pivot)
+        {
+            i++;
+            swap(&arr[i], &arr[j]);
+        }
+    }
+    swap(&arr[i + 1], &arr[top]);
+    return (i+1);
+}
+
 int main(int argc, char** argv) {
 
     return 0;
