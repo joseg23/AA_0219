@@ -47,6 +47,19 @@ void quickSort(int arr[], int down, int top)
     }
 }
 
+void printArray(int arr[], int size)
+{
+    int i;
+    int a;
+    for (i=0; i<size; i++){
+        cout<<arr[i]<<" ";
+        if (arr[i]%2==0)
+            a=arr[i];      
+    }
+        cout<<endl;
+    cout<<a+2;
+}
+
 int main(int argc, char** argv) {
 
     return 0;
