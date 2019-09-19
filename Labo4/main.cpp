@@ -37,6 +37,16 @@ int particion(int arr[], int down, int top)
     return (i+1);
 }
 
+void quickSort(int arr[], int down, int top)
+{
+    if(down<top)
+    {
+        int p=partition(arr, down, top);
+        quickSort(arr, down, p-1);
+        quickSort(arr, p+1, top);
+    }
+}
+
 int main(int argc, char** argv) {
 
     return 0;
