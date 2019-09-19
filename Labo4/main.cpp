@@ -33,7 +33,7 @@ int particion(int arr[], int down, int top)
             swap(&arr[i], &arr[j]);
         }
     }
-    swap(&arr[i + 1], &arr[top]);
+    swap(&arr[i+1], &arr[top]);
     return (i+1);
 }
 
@@ -41,7 +41,7 @@ void quickSort(int arr[], int down, int top)
 {
     if(down<top)
     {
-        int p=partition(arr, down, top);
+        int p=particion(arr, down, top);
         quickSort(arr, down, p-1);
         quickSort(arr, p+1, top);
     }
@@ -60,8 +60,12 @@ void printArray(int arr[], int size)
     cout<<a+2;
 }
 
-int main(int argc, char** argv) {
-
+int main() {
+    int arr[]={100, 17, 45, 10, 17, 23};
+    int k=sizeof(arr)/sizeof(arr[0]);
+    quickSort(arr, 0, k-1);
+    //cout<<"Arreglo ordenado: \n";
+    printArray(arr, k);
     return 0;
 }
 
